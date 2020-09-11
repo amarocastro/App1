@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3T0/tcU/ybSBtniGzB7A/NXVxl6hYpt/U2vSIFiszplgJ8rZwZU9n5B+9IflM0aVQ4G3/hiBJCvDxDMg5/GhMQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\amaro\\source\\repos\\App1\\App1.Core\\App1.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amaro\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\amaro\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

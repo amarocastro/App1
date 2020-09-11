@@ -1,0 +1,12 @@
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.AssemblyInfoInputs.cache
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.AssemblyInfo.cs
+C:\Users\amaro\source\repos\App1\App1.Core\bin\Debug\netstandard2.0\App1.Core.deps.json
+C:\Users\amaro\source\repos\App1\App1.Core\bin\Debug\netstandard2.0\App1.Core.dll
+C:\Users\amaro\source\repos\App1\App1.Core\bin\Debug\netstandard2.0\App1.Core.pdb
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.csprojAssemblyReference.cache
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.csproj.CoreCompileInputs.cache
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.dll
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.pdb
+C:\Users\amaro\source\repos\App1\App1.Core\bin\Debug\netstandard2.0\Windows.Foundation.FoundationContract.winmd
+C:\Users\amaro\source\repos\App1\App1.Core\bin\Debug\netstandard2.0\Windows.Foundation.UniversalApiContract.winmd
+C:\Users\amaro\source\repos\App1\App1.Core\obj\Debug\netstandard2.0\App1.Core.csproj.CopyComplete
