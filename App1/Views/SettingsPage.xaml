@@ -27,15 +27,21 @@
                         IsChecked="{x:Bind ViewModel.Provider, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=HereWeather,Mode=OneWay}"
                         FontSize="15"
                         GroupName="ForecastSettings">
-
+                        <RadioButton.CommandParameter>
+                            <type:Provider>HereWeather</type:Provider>
+                        </RadioButton.CommandParameter>
                     </RadioButton>
                 </StackPanel>
                 <RadioButton
                         x:Uid="Settings_WeatherIO_Provider"
+                        Name="Settings_Weather_IO_Provider"
                         Command="{x:Bind ViewModel.SwitchForecastCommand}"
                         IsChecked="{x:Bind ViewModel.Provider, Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Weather_IO, Mode=OneWay}"
                         FontSize="15"
                         GroupName="ForecastSettings">
+                    <RadioButton.CommandParameter>
+                        <type:Provider>Weather_IO</type:Provider>
+                    </RadioButton.CommandParameter>
                 </RadioButton>
             </StackPanel>
 

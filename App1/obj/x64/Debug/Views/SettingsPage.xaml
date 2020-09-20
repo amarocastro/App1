@@ -27,15 +27,21 @@
                                                                                                                                                               
                         FontSize="15"
                         GroupName="ForecastSettings">
-
+                        <RadioButton.CommandParameter>
+                            <type:Provider>HereWeather</type:Provider>
+                        </RadioButton.CommandParameter>
                     </RadioButton>
                 </StackPanel>
                 <RadioButton x:ConnectionId='7'
                         x:Uid="Settings_WeatherIO_Provider"
+                        Name="Settings_Weather_IO_Provider"
                                                                           
                                                                                                                                                              
                         FontSize="15"
                         GroupName="ForecastSettings">
+                    <RadioButton.CommandParameter>
+                        <type:Provider>Weather_IO</type:Provider>
+                    </RadioButton.CommandParameter>
                 </RadioButton>
             </StackPanel>
 

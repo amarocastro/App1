@@ -87,6 +87,7 @@
       <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ElementTheme" />
+    <RootType FullName="App1.ViewModels.Provider" />
     <RootType FullName="App1.Views.SettingsPage" />
     <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
       <RootMethod Name="GetBehaviors" />

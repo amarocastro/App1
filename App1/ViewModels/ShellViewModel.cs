@@ -70,7 +70,7 @@ namespace App1.ViewModels
 
         public ICommand ItemInvokedCommand => _itemInvokedCommand ?? (_itemInvokedCommand = new RelayCommand<WinUI.NavigationViewItemInvokedEventArgs>(OnItemInvoked));
 
-        public ICommand QuerySubmittedCommand => _querysubmittedCommand ?? (_querysubmittedCommand = new RelayCommand(QuerySubmitted));
+        public ICommand QuerySubmittedCommand => _querysubmittedCommand ?? (_querysubmittedCommand = new RelayCommand<LocationItem>(QuerySubmitted));
 
         public ICommand TextChangedCommad => _texthaschangedCommand ?? (_texthaschangedCommand = new RelayCommand<string>(TextHasChanged));
         public ShellViewModel()
@@ -159,8 +159,10 @@ namespace App1.ViewModels
             args.Handled = result;
         }
 
-        private static void QuerySubmitted()
+        private static void QuerySubmitted(LocationItem selectedItem)
         {
+            var a = "";
+            a.ToString();
             
         }
 

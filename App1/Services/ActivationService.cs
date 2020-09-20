@@ -65,6 +65,7 @@ namespace App1.Services
         {
             await Singleton<BackgroundTaskService>.Instance.RegisterBackgroundTasksAsync().ConfigureAwait(false);
             await ThemeSelectorService.InitializeAsync().ConfigureAwait(false);
+            await SettingsService.InitializeAsync().ConfigureAwait(false);
         }
 
         private async Task HandleActivationAsync(object activationArgs)
