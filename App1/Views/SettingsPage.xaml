@@ -7,9 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     xmlns:xaml="using:Windows.UI.Xaml"
+    xmlns:type="using:App1.ViewModels"
     mc:Ignorable="d">
     <Page.Resources>
-        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
+        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
     </Page.Resources>
 
     <Grid Margin="{StaticResource MediumLeftRightMargin}">
@@ -18,24 +19,30 @@
             <TextBlock x:Uid="Forecast_Settings" Style="{ThemeResource SubtitleTextBlockStyle}" />
             <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                 <TextBlock x:Uid="Provider_Selection"/>
-                <StackPanel Margin="{StaticResource SmallBottomMargin}">
+                <StackPanel Margin="{StaticResource XSmallTopMargin}">
                     <RadioButton
-                        x:Uid="Here_Provider"
-                        Command="{x:Bind ViewModel.}"
-                        IsChecked="{x:Bind }"
+                        x:Uid="Settings_Here_Provider"
+                        Name="Settings_Here_Provider"
+                        Command="{x:Bind ViewModel.SwitchForecastCommand}"
+                        IsChecked="{x:Bind ViewModel.Provider, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=HereWeather,Mode=OneWay}"
                         FontSize="15"
-                        GroupName="AppTheme">
-                        <RadioButton.CommandParameter>
-                            <xaml:ElementTheme>Here_Weather</xaml:ElementTheme>
-                        </RadioButton.CommandParameter>
+                        GroupName="ForecastSettings">
+
                     </RadioButton>
                 </StackPanel>
+                <RadioButton
+                        x:Uid="Settings_WeatherIO_Provider"
+                        Command="{x:Bind ViewModel.SwitchForecastCommand}"
+                        IsChecked="{x:Bind ViewModel.Provider, Converter={StaticResource EnumToBooleanConverter},ConverterParameter=Weather_IO, Mode=OneWay}"
+                        FontSize="15"
+                        GroupName="ForecastSettings">
+                </RadioButton>
             </StackPanel>
-            
+
             <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
             <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                 <TextBlock x:Uid="Settings_Theme" />
-                
+
                 <StackPanel Margin="{StaticResource XSmallTopMargin}">
                     <RadioButton
                         x:Uid="Settings_Theme_Light"
@@ -82,5 +89,5 @@
                 <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
             </StackPanel>
         </StackPanel>
-    </Grid>    
+    </Grid>
 </Page>

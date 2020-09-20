@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 
+using App1.ViewModels;
+
 namespace App1.Helpers
 {
     public class RelayCommand : ICommand

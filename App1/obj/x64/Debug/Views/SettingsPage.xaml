@@ -7,14 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Style="{StaticResource PageStyle}"
     xmlns:xaml="using:Windows.UI.Xaml"
+    xmlns:type="using:App1.ViewModels"
     mc:Ignorable="d">
     <Page.Resources>
-        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter" EnumType="ElementTheme" />
+        <helper:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
     </Page.Resources>
 
     <Grid Margin="{StaticResource MediumLeftRightMargin}">
         <StackPanel x:ConnectionId='2'
             x:Name="ContentArea">
+            <TextBlock x:Uid="Forecast_Settings" Style="{ThemeResource SubtitleTextBlockStyle}" />
+            <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
+                <TextBlock x:Uid="Provider_Selection"/>
+                <StackPanel Margin="{StaticResource XSmallTopMargin}">
+                    <RadioButton x:ConnectionId='8'
+                        x:Uid="Settings_Here_Provider"
+                        Name="Settings_Here_Provider"
+                                                                          
+                                                                                                                                                              
+                        FontSize="15"
+                        GroupName="ForecastSettings">
+
+                    </RadioButton>
+                </StackPanel>
+                <RadioButton x:ConnectionId='7'
+                        x:Uid="Settings_WeatherIO_Provider"
+                                                                          
+                                                                                                                                                             
+                        FontSize="15"
+                        GroupName="ForecastSettings">
+                </RadioButton>
+            </StackPanel>
+
             <TextBlock x:Uid="Settings_Personalization" Style="{ThemeResource SubtitleTextBlockStyle}" />
             <StackPanel Margin="{StaticResource SmallTopBottomMargin}">
                 <TextBlock x:Uid="Settings_Theme" />
@@ -65,6 +89,6 @@
                 <HyperlinkButton x:Uid="Settings_PrivacyTermsLink" Margin="{StaticResource XSmallTopMargin}" />
             </StackPanel>
         </StackPanel>
-    </Grid>    
+    </Grid>
 </Page>
 

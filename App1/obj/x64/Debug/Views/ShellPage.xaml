@@ -1,0 +1,101 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="App1.Views.ShellPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:behaviors="using:App1.Behaviors"
+    xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+    xmlns:helpers="using:App1.Helpers"
+    xmlns:views="using:App1.Views"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    mc:Ignorable="d">
+
+    <i:Interaction.Behaviors>
+        <ic:EventTriggerBehavior EventName="Loaded">
+            <ic:InvokeCommandAction x:ConnectionId='2'                                            />
+        </ic:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+
+    <winui:NavigationView x:ConnectionId='3'
+        x:Name="navigationView"
+        IsBackButtonVisible="Visible"
+                                                                     
+                                                               
+        IsSettingsVisible="True"
+        Background="{ThemeResource SystemControlBackgroundAltHighBrush}">
+
+        <winui:NavigationView.AutoSuggestBox>
+            <AutoSuggestBox x:ConnectionId='4' QueryIcon="Find" Name="SearchPlace" 
+							PlaceholderText="Search Your Place"
+                            UpdateTextOnSelect="False"
+                            ItemsSource="{Binding Suggestions}">
+
+                <i:Interaction.Behaviors>
+                    <ic:EventTriggerBehavior EventName="TextChanged">
+                        <ic:InvokeCommandAction x:ConnectionId='6'
+                                                                          
+                            CommandParameter="{Binding Text, ElementName=SearchPlace}"/>
+                    </ic:EventTriggerBehavior>
+                    <ic:EventTriggerBehavior EventName="QuerySubmitted">
+                        <ic:InvokeCommandAction x:ConnectionId='5'
+                                                                              
+                                                                   />
+                    </ic:EventTriggerBehavior>
+                </i:Interaction.Behaviors>
+                
+                <AutoSuggestBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,12,0,12" Tag="{Binding id}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel  Grid.Row="0" Orientation="Horizontal">
+                                <TextBlock Text="{Binding title}" Width="248"/>
+                                <FontIcon Glyph="&#xE707;" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <TextBlock Text="{Binding subtitle}" FontSize="12"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </AutoSuggestBox.ItemTemplate>
+            </AutoSuggestBox>
+        </winui:NavigationView.AutoSuggestBox>
+        <winui:NavigationView.MenuItems>
+            <!--
+            TODO WTS: Change the symbols for each item as appropriate for your app
+            More on Segoe UI Symbol icons: https://docs.microsoft.com/windows/uwp/style/segoe-ui-symbol-font
+            Or to use an IconElement instead of a Symbol see https://github.com/Microsoft/WindowsTemplateStudio/blob/master/docs/UWP/projectTypes/navigationpane.md
+            Edit String/en-US/Resources.resw: Add a menu item title for each page
+            -->
+            <winui:NavigationViewItem x:Uid="Forecast_Location" Icon="MapPin"
+                                      helpers:NavHelper.NavigateTo="views:ForecastPage" />
+            <winui:NavigationViewItem x:Uid="Favourite_List" Icon="List"
+                                      helpers:NavHelper.NavigateTo="views:FavouritePage"/>
+        </winui:NavigationView.MenuItems>
+        <i:Interaction.Behaviors>
+            <behaviors:NavigationViewHeaderBehavior x:ConnectionId='8'                                                                 >
+                <behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <TextBlock
+                                Text="{Binding}"
+                                Style="{ThemeResource TitleTextBlockStyle}"
+                                Margin="{StaticResource SmallLeftRightMargin}" />
+                        </Grid>
+                    </DataTemplate>
+                </behaviors:NavigationViewHeaderBehavior.DefaultHeaderTemplate>
+            </behaviors:NavigationViewHeaderBehavior>
+            <ic:EventTriggerBehavior EventName="ItemInvoked">
+                <ic:InvokeCommandAction x:ConnectionId='9'                                                 />
+            </ic:EventTriggerBehavior>
+        </i:Interaction.Behaviors>
+        <Grid>
+            <Frame x:ConnectionId='11' x:Name="shellFrame" />
+        </Grid>
+    </winui:NavigationView>
+</Page>
+

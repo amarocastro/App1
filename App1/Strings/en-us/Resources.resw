@@ -185,4 +185,20 @@
     <value>Forecast</value>
     <comment>Navigation view item name for Forecast</comment>
   </data>
+  <data name="Forecast_Settings.Text" xml:space="preserve">
+    <value>Forecast settings</value>
+    <comment>Forecast settings text</comment>
+  </data>
+  <data name="Provider_Selection.Text" xml:space="preserve">
+    <value>Choose a forecast provider</value>
+    <comment>Forecast provider text for settings</comment>
+  </data>
+  <data name="Settings_Here_Provider.Content" xml:space="preserve">
+    <value>Here Weather</value>
+    <comment>Name for here weather setting</comment>
+  </data>
+  <data name="Settings_WeatherIO_Provider.Content" xml:space="preserve">
+    <value>Weather.IO</value>
+    <comment>Weather.IO text for provider setting</comment>
+  </data>
 </root>

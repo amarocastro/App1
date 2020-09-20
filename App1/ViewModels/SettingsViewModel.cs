@@ -6,7 +6,9 @@ using App1.Helpers;
 using App1.Services;
 
 using Windows.ApplicationModel;
+using Windows.Storage;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace App1.ViewModels
 {
@@ -14,12 +16,19 @@ namespace App1.ViewModels
     public class SettingsViewModel : Observable
     {
         private ElementTheme _elementTheme = ThemeSelectorService.Theme;
-        private string _forecastProvider = 
+        private Provider _provider = SettingsService.Provider; //Default provider
+
         public ElementTheme ElementTheme
         {
             get { return _elementTheme; }
 
             set { Set(ref _elementTheme, value); }
+        }
+
+        public Provider Provider
+        {
+            get { return _provider; }
+            set { Set(ref _provider, value); }
         }
 
         private string _versionDescription;
@@ -32,6 +41,7 @@ namespace App1.ViewModels
         }
 
         private ICommand _switchThemeCommand;
+        private ICommand _switchForecastCommand;
 
         public ICommand SwitchThemeCommand
         {
@@ -48,6 +58,23 @@ namespace App1.ViewModels
                 }
 
                 return _switchThemeCommand;
+            }
+        }
+
+        public ICommand SwitchForecastCommand
+        {
+            get
+            {
+                if (_switchForecastCommand == null)
+                {
+                    _switchForecastCommand = new RelayCommand<Provider>(
+                        async (param) =>
+                        {
+                            Provider = param;
+                            await SettingsService.SetProviderAsync(param);
+                        });
+                }
+                return _switchForecastCommand;
             }
         }
 
@@ -70,5 +97,11 @@ namespace App1.ViewModels
 
             return $"{appName} - {version.Major}.{version.Minor}.{version.Build}.{version.Revision}";
         }
+    }
+
+    public enum Provider
+    {
+        HereWeather = 0,
+        Weather_IO = 1
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Windows.UI.Xaml.Data;
+using App1.ViewModels;
 
 namespace App1.Helpers
 {
@@ -10,6 +11,7 @@ namespace App1.Helpers
 
         public object Convert(object value, Type targetType, object parameter, string language)
         {
+            EnumType = value.GetType();
             if (parameter is string enumString)
             {
                 if (!Enum.IsDefined(EnumType, value))
@@ -27,6 +29,7 @@ namespace App1.Helpers
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
+            EnumType = value.GetType();
             if (parameter is string enumString)
             {
                 return Enum.Parse(EnumType, enumString);
