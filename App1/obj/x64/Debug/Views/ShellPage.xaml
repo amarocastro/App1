@@ -40,8 +40,7 @@
                     </ic:EventTriggerBehavior>
                     <ic:EventTriggerBehavior EventName="QuerySubmitted">
                         <ic:InvokeCommandAction x:ConnectionId='5'
-                                                                              
-                                                                   />
+                                                                              />
                     </ic:EventTriggerBehavior>
                 </i:Interaction.Behaviors>
                 

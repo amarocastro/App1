@@ -40,8 +40,7 @@
                     </ic:EventTriggerBehavior>
                     <ic:EventTriggerBehavior EventName="QuerySubmitted">
                         <ic:InvokeCommandAction
-                            Command="{x:Bind ViewModel.QuerySubmittedCommand}"
-                            CommandParameter="{Binding Sug,ElementName=SearchPlace}"/>
+                            Command="{x:Bind ViewModel.QuerySubmittedCommand}"/>
                     </ic:EventTriggerBehavior>
                 </i:Interaction.Behaviors>
                 

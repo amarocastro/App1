@@ -27,6 +27,7 @@ namespace App1.Core.Models.ForecastProviders
 		public abstract string getRocio();
 		public abstract string getVisibility();
 		public abstract string getWindSpeed();
+		public abstract List<ForecastHourly> getHourlyForecast();
 	}
 
 }

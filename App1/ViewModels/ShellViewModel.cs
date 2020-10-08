@@ -70,7 +70,7 @@ namespace App1.ViewModels
 
         public ICommand ItemInvokedCommand => _itemInvokedCommand ?? (_itemInvokedCommand = new RelayCommand<WinUI.NavigationViewItemInvokedEventArgs>(OnItemInvoked));
 
-        public ICommand QuerySubmittedCommand => _querysubmittedCommand ?? (_querysubmittedCommand = new RelayCommand<LocationItem>(QuerySubmitted));
+        public ICommand QuerySubmittedCommand => _querysubmittedCommand ?? (_querysubmittedCommand = new RelayCommand<AutoSuggestBoxQuerySubmittedEventArgs>(QuerySubmitted));
 
         public ICommand TextChangedCommad => _texthaschangedCommand ?? (_texthaschangedCommand = new RelayCommand<string>(TextHasChanged));
         public ShellViewModel()
@@ -159,11 +159,14 @@ namespace App1.ViewModels
             args.Handled = result;
         }
 
-        private static void QuerySubmitted(LocationItem selectedItem)
+        private static void QuerySubmitted(AutoSuggestBoxQuerySubmittedEventArgs args)
         {
-            var a = "";
-            a.ToString();
-            
+
+            if (args.ChosenSuggestion != null)
+            {
+                LocationItem selectedItem = (LocationItem)args.ChosenSuggestion;
+                NavigationService.Navigate<ForecastPage>(selectedItem);
+            }
         }
 
         private async void TextHasChanged(string text)

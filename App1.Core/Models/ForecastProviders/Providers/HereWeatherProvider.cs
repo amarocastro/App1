@@ -12,7 +12,6 @@ namespace App1.Core.Models.ForecastProviders.Providers
 	{
 		public NowForecast observation;
 
-
 		public HereWeatherProvider(string name)
 		{
 			this.Name = name;
@@ -72,6 +71,24 @@ namespace App1.Core.Models.ForecastProviders.Providers
 
 			return this.observation.location.First<Info>().observation.First<CurrentInformation>().windSpeed.ToString();
 
+		}
+
+		public override List<ForecastHourly> getHourlyForecast()
+		{
+			List<ForecastHourly> hourlyList = new List<ForecastHourly>();
+			List<CurrentInformation> observationList = this.observation.location.First<Info>().observation;
+
+			for (int i = 1; i < observationList.Count(); i++) 
+			{
+				ForecastHourly item = new ForecastHourly();
+				item.temperature = observationList[i].temperature;
+				item.humidity = observationList[i].humidity;
+				item.windSpeed = observationList[i].windSpeed;
+				item.time = observationList[i].utcTime;
+				item.description = observationList[i].skyDescription;
+			}
+
+			return hourlyList;
 		}
 	}
 }

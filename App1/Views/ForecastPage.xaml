@@ -9,7 +9,7 @@
     <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
         <Grid
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-
+            
         </Grid>
     </Grid>
 </Page>

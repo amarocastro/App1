@@ -7,7 +7,7 @@
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
 
-    <Grid>
-
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="Welcome"></TextBlock>
     </Grid>
 </Page>

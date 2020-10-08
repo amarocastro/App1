@@ -42,8 +42,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="TextTrimming" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Style" />
       <RootProperty Name="Text" />
+      <RootProperty Name="Style" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
     </RootType>
@@ -52,8 +52,10 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="Padding" />
       <RootProperty Name="Tag" />

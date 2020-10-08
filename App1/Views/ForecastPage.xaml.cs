@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using App1.Core.Models.SearchModel;
+using App1.ViewModels;
+
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace App1.Views
@@ -22,9 +25,17 @@ namespace App1.Views
     /// </summary>
     public sealed partial class ForecastPage : Page
     {
+
+        public ForecastViewModel ViewModel { get; } = new ForecastViewModel();
+
         public ForecastPage()
         {
             this.InitializeComponent();
+        }
+
+        protected async void OnNavigatedTo(NavigationEnventArgs args, LocationItem selectedItem)
+        {
+            await ViewModel.InitializeAsync(selectedItem);
         }
     }
 }

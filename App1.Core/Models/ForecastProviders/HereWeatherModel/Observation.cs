@@ -15,25 +15,25 @@ namespace App1.Core.Models.ForecastProviders.HereWeatherModel
 	}
 	public class CurrentInformation
 	{
-		public string description { get; set; }
-		public int skyInfo { get; set; }
-		public string skyDescription { get; set; }
-		public decimal temperature { get; set; }
-		public string temperatureDesc { get; set; }
-		public decimal comfort { get; set; }
-		public decimal highTemperature { get; set; }
-		public decimal lowTemperature { get; set; }
-		public int humidity { get; set; }
-		public decimal dewPoint { get; set; }
-		public decimal windSpeed { get; set; }
-		public decimal windDirection { get; set; }
-		public string windDesc { get; set; }
-		public string windDescShort { get; set; }
-		public decimal barometerPressure { get; set; }
-		public string iconName { get; set; }
-		public decimal distance { get; set; }
+		public string description { get; set; } //weather description
+		public int skyInfo { get; set; } //sky status
+		public string skyDescription { get; set; } //sky description
+		public decimal temperature { get; set; } //actual temeprature
+		public string temperatureDesc { get; set; } //temerature description
+		public decimal comfort { get; set; } //feeling temperature
+		public decimal highTemperature { get; set; } //max temperature
+		public decimal lowTemperature { get; set; } //min temperature
+		public int humidity { get; set; } //humidity %
+		public decimal dewPoint { get; set; } //dew point
+		public decimal windSpeed { get; set; } //wind speed
+		public decimal windDirection { get; set; } //wind direction
+		public string windDesc { get; set; } //wind description
+		public string windDescShort { get; set; } //wind description
+		public decimal barometerPressure { get; set; } //pressure
+		public string iconName { get; set; } //icon code
+		public decimal distance { get; set; } //visibility distance
 
-		public DateTime utcTime { get; set; }
+		public DateTime utcTime { get; set; } //prediction time
 
 	}
 }

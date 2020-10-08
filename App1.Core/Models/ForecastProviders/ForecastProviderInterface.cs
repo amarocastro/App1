@@ -14,5 +14,6 @@ namespace App1.Core.Models.ForecastProviders
 		string getPressure();
 		string getHumidity();
 		string getRocio();
+		List<ForecastHourly> getHourlyForecast();
 	}
 }
